@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Housesale</title>
+	<!--BOOTSTRAP AND CSS LINKS-->
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	 <!-- <link rel="stylesheet" href="./css/bootstrap.min.css">  -->
+	<link rel="stylesheet" href="./css/countrySelect.css">
+	<!-- <link rel="stylesheet" href="./css/codepen-carbon.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.0/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css">
+	<link rel="stylesheet" href="./css/flags.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"rel="stylesheet">
+</head>
+<body>
+	<!-- HEADER -->
+	<header>
+		<div class="navbar-main">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg navbar-light pt-3">
+					<img class="nav-logo mt-3" src="images/logo.png">
+					<button class="hamburger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse pt-3" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item pl-lg-3"><a class="nav-link text-light" href="#">On sale</a></li>
+							<li class="nav-item pl-lg-3"><a class="nav-link text-light" href="#">For rent</a></li>
+							<li class="nav-item pl-lg-3"><a class="nav-link text-light" href="#">New Residential Project</a></li>
+							<li class="nav-item pl-lg-3"><a class="nav-link text-light" href="#">Property News</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!-- HEADER -->
+	<!-- HERO SECTION -->
+	<section class="hero-section homepage-hero-slider gallery">
+		<div class="photos">
+			<div class="slide block active"
+				style="background:linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%), url(images/caro-1.jpg) no-repeat center center; background-size: cover;"></div>
+			<div class="slide block"
+				style="background: url(images/hero-image.png) no-repeat center center; background-size: cover;"></div>
+			<div class="slide block"
+				style="background:linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%), url(images/caro-3.jpg) no-repeat center center; background-size: cover;"></div>
+			<div class="slide block"
+				style="background:linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%), url(images/caro-2.jpg) no-repeat center center; background-size: cover;"></div>
+			<div class="inner-hero">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-content">
+								<h1>Quality home services, on demand</h1>
+								<p class="pt-3">Experienced, hand-picked Professionals to serve you at your doorstep</p>
+							</div>
+						</div>
+					</div>
+					<div class="search-box">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-12 col-12">
+								<div class="bg-color">
+									<!-- <input type="text" class="form-control serch-input" placeholder="Name" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+									<select name="address" id="address" class="custom-style">
+										<option value=""><p>Phone No</p></option>
+									</select>
+								</div>
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-12 col-12">
+								<div class="bg-color">
+									<!-- <input type="text" class="form-control serch-input" placeholder="Address" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+							         <form id="form" action="#">
+										 <div class="inputBox">
+											 <input type="text" name="" id="email" placeholder="Enter Your Email" onkeydown="validation()"> 
+											 <span id="text"></span>
+										 </div>
+									 </form>
+								</div>
+							</div>
+						</div>
+						<div class="second-row">
+							<div class="row">
+								<div class="col-lg-3 col-md-3 col-sm-12 col-12">
+									<div class="bg-color">
+										<!-- <input type="text" class="form-control serch-input" placeholder="Country" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+										<form>
+											<div class="form-item">
+												<input id="country_selector" type="text">
+												<label for="country_selector" style="display:none;">Select a country here...</label>
+											</div>
+											<div class="form-item" style="display:none;">
+												<input type="text" id="country_selector_code" name="country_selector_code" data-countrycodeinput="1" readonly="readonly" placeholder="Selected country code will appear here" />
+												<label for="country_selector_code">...and the selected country code will be updated here</label>
+											</div>
+											<button type="submit" style="display:none;">Submit</button>
+										</form>
+									</div>
+								</div>
+								<div class="col-lg-9 col-md-9 col-sm-12 col-12">
+									<div class="bg d-flex flex-column flex-lg-row flex-md-row">
+										<div class="bg-colour1">
+											<input type="text" class="form-control serch-input" placeholder="Gender"
+												aria-label="Recipient's username" aria-describedby="basic-addon2" 	>
+										</div>
+										<div class="bg-colour">
+											<!-- <input type="text" class="form-control serch-input" placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+											<div class="widget-wrap custom-style time-style">
+												<div id="hash"></div>
+												<input type="text" id="demoA" placeholder="Select Time"/>
+												<div class="clock-image">
+													<img src="images/clock.png">
+												</div>
+											
+											</div>
+										</div>
+										<div class="bg-colour d-flex">
+											<!-- <input type="text" class="form-control serch-input" placeholder="Place" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+											<input id="datepicker" class="date-input" placeholder="Date" class="serch-input" />
+											<i class="far fa-calendar"></i>
+                                            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+											<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+											<script>
+												var today, datepicker;
+												today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+												datepicker = $('#datepicker').datepicker({
+													minDate: today,
+													format: 'yyyy-mm-dd'
+												});
+											</script>
+										</div>
+									<div class="bg-colour4">
+										<p>Search</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="buttons">
+				<a class="prev" href="#"><i class="fas fa-fw fa-arrow-left"></i></a>
+				<a class="next" href="#"><i class="fas fa-fw fa-arrow-right"></i></a>
+			</div>
+		</div>
+  </section>
+	<!-- HERO SECTION -->
+	<!-- CARDS -->
+	<section class="cards">
+		<div class="container">
+			<div class="tab">
+				<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">BASIC</button>
+				<button class="tablinks" onclick="openCity(event, 'Paris')">STANDARD</button>
+				<button class="tablinks" onclick="openCity(event, 'Tokyo')">PREMIUM</button>
+			  </div>
+			  <div id="London" class="tabcontent">
+				<div class="row d-flex justify-content-center">
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-1.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Same great quality. New lower prices.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-2.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Everyday Essentials, High quality affordable</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-3.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Join the makeover journey</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <div id="Paris" class="tabcontent">
+				<div class="row d-flex justify-content-center">
+			
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-2.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Everyday Essentials, High quality affordable</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-3.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Join the makeover journey</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-1.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Same great quality. New lower prices.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <div id="Tokyo" class="tabcontent">
+				<div class="row d-flex justify-content-center">
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-1.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Same great quality. New lower prices.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-2.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Everyday Essentials, High quality affordable</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="card">
+							<img class="card-img-top" src="images/card-image-3.png" alt="Card image cap">
+							<div class="card-body d-flex align-items-center">
+								<img src="images/arrow.png">
+								<p class="card-text pl-2">Join the makeover journey</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+		</div>
+	</section>
+	<!-- CARDS -->
+	<!-- HOUSESALE FEATURES -->
+	<section class="features">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12">
+					<div class="housesale">
+						<h1>Why housesale Company?</h1>
+					</div>
+					<!-- Transparent -->
+					<div class="transparent d-flex">
+						<div class="transparent-image">
+							<img src="images/promote.png">
+						</div>
+						<div class="transparent-text pt-3">
+					       <div class="accordion">
+							   <div class="contentBx">
+								   <div class="label">Transparent pricing</div>
+								   <div class="content">See fixed prices before you book. No hidden charges.</div>
+							   </div>
+						   </div>
+							<!-- <h1>Transparent pricing</h1>
+							<p>See fixed prices before you book. No hidden charges.</p> -->
+						</div>
+					</div>
+					<!-- Experts -->
+					<div class="experts d-flex mt-4">
+						<div class="experts-image">
+							<img src="images/chat-group 1.png">
+						</div>
+						<div class="experts-text pt-3">
+							<div class="accordion">
+								<div class="contentBx">
+									<div class="label">Experts only</div>
+									<div class="content">Our professionals are well trained and have on-job expertise.</div>
+								</div>
+							</div>
+							<!-- <h1>Experts only</h1>
+							<p>Our professionals are well trained and have on-job expertise.</p> -->
+						</div>
+					</div>
+					<!-- Equipment -->
+					<div class="equipment d-flex mt-4">
+						<div class="equipment-image">
+							<img src="images/chat 1.png">
+						</div>
+						<div class="equipment-text pt-3">
+							<div class="accordion">
+								<div class="contentBx">
+									<div class="label">Fully equipped</div>
+									<div class="content">We bring everything needed to get the job done well.</div>
+								</div>
+							</div>
+							<!-- <h1>Fully equipped</h1>
+							<p>We bring everything needed to get the job done well.</p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-12 d-flex justify-content-center">
+					<div class="features-image">
+						<img src="images/image.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- HOUSESALE FEATURES -->
+	<!-- BOOKINGS -->
+	<section class="bookings">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="booking">
+						<div class="booking-content">
+							<h1>Book professionals from your phone</h1>
+							<p>Enter your mobile number to get the professionals help</p>
+						</div>
+						<div class="booking-input">
+							<div class="wrap">
+							  <form action="#" method="get">
+								  <div class="form-group">
+									<input class="form-control tel" type="tel" name="leyka_donor_phone" inputmode="tel" value=""/>
+								  </div>
+								</form>
+							  </div>
+							<div class="button">
+								<h1>Send</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- BOOKINGS -->
+	<!-- PICTURES -->
+		<div class="container">
+			<div class="heading-more">
+				<h1>More ideas and inspiration</h1>
+			</div>
+			<div class="row mt-5">
+				<div class="col-lg-3 col-sm-6">
+					<div class="image-hoverlay">
+						<img src="images/gallery1.png" alt="Avatar" class="image">
+						<div class="overlay">
+						  <div class="text">
+							  <h1>Hey! There</h1>
+							  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos ab sed praesentium, </p>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="image-hoverlay">
+						<img src="images/gallery2.png" alt="Avatar" class="image">
+						<div class="overlay">
+						  <div class="text">
+							  <h1>Hey! There</h1>
+							  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nesciunt </p>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt-sm-3 mt-lg-0">
+					<div class="image-hoverlay">
+						<img src="images/gallery3.png" alt="Avatar" class="image">
+						<div class="overlay">
+						  <div class="text">
+							  <h1>Hey! There</h1>
+							  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea </p>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6 mt-sm-3 mt-lg-0">
+					<div class="image-hoverlay">
+						<img src="images/gallery4.png" alt="Avatar" class="image">
+						<div class="overlay">
+						  <div class="text">
+							  <h1>Hey! There</h1>
+							  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio qui dol</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-2 mt-lg-4 mt-sm-3">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div class="image-hoverlay">
+							<img src="images/galler6.png" alt="Avatar" class="image">
+							<div class="overlay">
+							  <div class="text">
+								  <h1>Hey! There</h1>
+								  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam </p>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="image-hoverlay">
+							<img src="images/gallery1.png" alt="Avatar" class="image">
+							<div class="overlay">
+							  <div class="text">
+								  <h1>Hey! There</h1>
+								  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 mt-sm-3 mt-lg-0">
+						<div class="image-hoverlay">
+							<img src="images/gallery3.png" alt="Avatar" class="image">
+							<div class="overlay">
+							  <div class="text">
+								  <h1>Hey! There</h1>
+								  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita dolor </p>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6 mt-sm-3 mt-lg-0">
+						<div class="image-hoverlay">
+							<img src="images/gallery4.png" alt="Avatar" class="image">
+							<div class="overlay">
+							  <div class="text">
+								  <h1>Hey! There</h1>
+								  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos </p>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- PICTURES -->
+	<!-- COLLECTION -->
+	<section class="collection">
+		<div class="container">
+			<h1>More ideas and inspiration</h1>
+			<div class="row d-flex flex-wrap align-items-center justify-content-center">
+				<div class="col-lg-6 col-sm-12">
+					<div class="collection-content">
+						<p>Housesale chose to work together with the Lebanese designer Nada Debs. We are thrilled to
+							present this
+							collaboration and the LJUV collection, and we hope that you can see, feel, use the
+							connection between a
+							designer from the Middle East democratic design.<br> <br>Nada Debs is a Levantine designer
+							living and working in Beirut. Her work spans scale and discipline:
+							from product to furniture design to one-off commission across craft, art, fashion, and
+							interiors.
+							Nada grew up in Japan, studied design in Rhode Island School of Design in the US, and has
+							spent significant
+							periods living and traveling the world, finding connections of each of her experiences in
+							all her work.
+							She calls her approach handmade, and heart-made!</p>
+						<button class="btn collection-btn" type="submit">More Collection</button>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-12 mt-lg-0 mt-sm-4">
+				     <div class="slider">
+						 <div class="slides">
+							 <!-- radio buttons -->
+							 <input type="radio" name="radio-btn" id="radio1">
+							 <input type="radio" name="radio-btn" id="radio2">
+							 <input type="radio" name="radio-btn" id="radio3">
+							 <input type="radio" name="radio-btn" id="radio4">
+							 <!-- slide images -->
+							 <div class="slid-e first">
+								<img src="images/collage-image.png"> 
+							 </div>
+							 <div class="slid-e">
+								<img src="images/collage-image.png"> 
+							 </div>
+							 <div class="slid-e">
+								<img src="images/collage-image.png"> 
+							 </div>
+							 <div class="slid-e">
+								<img src="images/collage-image.png"> 
+							 </div>
+							 <!-- slide images end -->
+							 <!-- automatic slider -->
+							 <div class="navigation-auto">
+								 <div class="auto-btn1"></div>
+								 <div class="auto-btn2"></div>
+								 <div class="auto-btn3"></div>
+								 <div class="auto-btn4"></div>
+							 </div>
+							 <!-- automatic slider end -->
+							 <!-- manual slider -->
+							 <div class="navigation-manual">
+								 <label for="radio1" class="manual-btn"></label>
+								 <label for="radio2" class="manual-btn"></label>
+								 <label for="radio3" class="manual-btn"></label>
+								 <label for="radio4" class="manual-btn"></label>
+							 </div>
+							 <!-- manual slider end -->
+				
+
+
+						 </div>
+					 </div>
+					</div>
+					<hr class="line">
+				</div>
+			</div>
+	</section>
+	<!-- COLLECTION -->
+	<!-- FURNITURE COLLECTION -->
+	<section class="furniture">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12">
+					<div class="furniture-content">
+						<p>Sofas | Beds | Dining | Tv units | Mattresses | Seating | Coffee tables | Wardrobes | Storage
+							| Bookshelves | Shoe racks | Decor| Bathroom | Textiles | Pots & plants | Home electronics |
+							Home improvement | Lighting</p>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-12">
+					<div class="explore-content">
+						<h1>Explore our furniture & home furnishing range</h1>
+						<h6 class="pt-4 pb-4">IKEA is a global leader in life at home.</h6>
+						<p>Whether you just moved into a new home or looking to revamp your current one, we at IKEA are
+							here to inspire you with affordable home furniture solutions, there is a piece of furniture
+							to every corner of your home. Create a home that is perfect for you.<br><br>
+							Shopping at IKEA is a bit different and exciting compared to your shopping at an everyday
+							retail. It is about experiencing solutions first hand and getting to know ideas and
+							inspirations that can fit perfectly into your home. That’s why, we offer more than 7500
+							products, solutions at our store along with home furnishing ideas and services for you to
+							explore.<br><br>
+							When you visit IKEA store, make yourself at home in our many room settings in the store.
+							Squeeze the upholsteries, feel the oriental rugs, try the sofa beds and open the cabinets to
+							feel the quality. On the price tag, you’ll find all you need to know about a product,
+							including where in the store you can pick it up.<br><br>
+							Since most IKEA furniture is flat-packed, they are quite easy to bring home when you buy
+							from the store.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FURNITURE COLLECTION -->
+	<!-- LOGOS -->
+		<section class="logos">
+			<div class="container">
+			  <div class="logo-slider">
+				<div class="logo-slide-track">
+				  <div class="slide">
+					<img src="images/logo-1.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-2.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-3.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-4.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-5.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-1.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-2.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-3.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-4.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-5.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-1.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-2.png">
+				  </div>
+				  <div class="slide">
+					<img src="images/logo-3.png">
+				  </div>
+			  </div>
+			</div>
+		  </div>
+		  </section>
+	<!-- LOGOS -->
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="housesale-info mt-5 pb-3 border-bottom">
+						<div class="housesale-content">
+							<p>Delivery Service</p>
+						</div>
+						<div class="housesale-content">
+							<p>Assembly Service</p>
+						</div>
+						<div class="housesale-content">
+							<p>Customer Service</p>
+						</div>
+						<div class="housesale-content">
+							<p>Contact Us</p>
+						</div>
+						<div class="housesale-content">
+							<p>Near Me</p>
+						</div>
+						<div class="housesale-content">
+							<p>Careers</p>
+						</div>
+						<div class="housesale-content">
+							<p>Gift Cards</p>
+						</div>
+						<div class="housesale-content">
+							<p>Contact Us</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="serving-countries mt-4">
+				<div class="serving-heading mt-4">
+					<h4>Serving in</h4>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-6 col-6 order-sm-1 order-1">
+
+						<div class="australia mt-4">
+							<h5>Australia</h5>
+						</div>
+						<div class="australia-city-names">
+							<div class="city-name">
+								<p>Sydney</p>
+							</div>
+							<div class="city-name">
+								<p>Albury</p>
+							</div>
+							<div class="city-name">
+								<p>Queensland</p>
+							</div>
+							<div class="city-name">
+								<p>Adelaide</p>
+							</div>
+							<div class="city-name">
+								<p>Hobart</p>
+							</div>
+							<div class="city-name">
+								<p>Darwin</p>
+							</div>
+							<div class="city-name">
+								<p>Canberra</p>
+							</div>
+							<div class="city-name">
+								<p>Perth</p>
+							</div>
+							<div class="city-name">
+								<p>Melbourne</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-6 col-6 order-sm-4 order-4">
+						<div class="uae-content">
+							<div class="uae mt-4">
+								<h5>UAE</h5>
+							</div>
+							<div class="uae-city-names">
+								<div class="city-name">
+									<p>Dubai</p>
+								</div>
+								<div class="city-name">
+									<p>Abu Dhabi</p>
+								</div>
+								<div class="city-name">
+									<p>Sharjah</p>
+								</div>
+								<div class="city-name">
+									<p>Ajman</p>
+								</div>
+								<div class="city-name">
+									<p>Al Ain</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-6 col-6 order-sm-2 order-2">
+						<div class="usa mt-4">
+							<h5>USA</h5>
+						</div>
+						<div class="usa-city-names">
+							<div class="city-name">
+								<p>New York</p>
+							</div>
+							<div class="city-name">
+								<p>Los Angeles</p>
+							</div>
+							<div class="city-name">
+								<p>Chicago</p>
+							</div>
+							<div class="city-name">
+								<p>Houston</p>
+							</div>
+							<div class="city-name">
+								<p>Philadelphia</p>
+							</div>
+							<div class="city-name">
+								<p>San Diego</p>
+							</div>
+							<div class="city-name">
+								<p>Boston</p>
+							</div>
+							<div class="city-name">
+								<p>Oklahoma City</p>
+							</div>
+						</div>
+					</div>
+                    <div class="col-md-12 col-sm-6 col-6 order-sm-3 order-3">
+						<div class="mexico-content">
+							<div class="mexico mt-4">
+								<h5>Mexico</h5>
+							</div>
+							<div class="mexico-city-names">
+								<div class="city-name">
+									<p>Mexico City</p>
+								</div>
+								<div class="city-name">
+									<p>Ecatepec</p>
+								</div>
+								<div class="city-name">
+									<p>Guadalajara</p>
+								</div>
+								<div class="city-name">
+									<p>Houston</p>
+								</div>
+								<div class="city-name">
+									<p>Puebla City</p>
+								</div>
+								<div class="city-name">
+									<p>Ciudad Juárez</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="manfacturer mt-5 pb-5">
+					<div class="row">
+						<div class="col-12">
+							<div class="manufacturer-content border-top pt-5">
+								<div class="logo">
+									<img src="images/logo.png">
+								</div>
+								<div class="os-logo1">
+									<div class="android1 pr-3">
+										<img src="images/android.png">
+									</div>
+									<div class="apple1">
+										<img src="images/apple.png">
+									</div>
+								</div>
+								<div class="housesale1">
+									<p>© 2020 Housesale Technologies Ltd.</p>
+								</div>
+								<div class="housesale1">
+									<p>1760 Dancing Dove Lane, New York, USA</p>
+								</div>
+								<div class="housesale1">
+									<p>sales@housesales.com</p>
+								</div>
+								<div class="os-logo">
+									<div class="android pr-3">
+										<img src="images/android.png">
+									</div>
+									<div class="apple">
+										<img src="images/apple.png">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<!-- RANDOM -->
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.0/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.8/jquery.inputmask.bundle.min.js"></script>
+<script src="js/countrySelect.js"></script>
+<script src="js/all.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.flagstrap.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
